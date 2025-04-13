@@ -89,26 +89,4 @@ app-paginator > * {
     z-index: 1000; /* Ensures it appears above other elements */
   }
 
-  /* Loader styles */
-  .loader {
-    border: 8px solid #f3f3f3; /* Light gray border */
-    border-top: 8px solid #3498db; /* Blue border */
-    border-radius: 50%; /* Makes it a circle */
-    width: 60px;
-    height: 60px;
-    animation: spin 1s linear infinite;
-    font-size: 1.2rem;
-    text-align: center;
-    color: #191717;
-    padding: 10px;
-  }
 
-  /* Loader spinning animation */
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }

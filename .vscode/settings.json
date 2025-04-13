@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/9496bf50-6a78-43ea-88d4-d48637fd5405/resourceGroups/AzureWebApp/providers/Microsoft.Web/sites/TopNewsUI",
+    "appService.deploySubpath": "dist\\news-ui\\browser"
+}
