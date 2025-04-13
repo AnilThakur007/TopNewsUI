@@ -1,0 +1,23 @@
+<div class="parent-container">
+    <!-- Loader -->
+    <div class="overlay" *ngIf="loading">
+        <div class="loader">
+            Loading data...
+        </div>
+    </div>
+    <div>
+        <input type="text" [(ngModel)]="searchTerm" placeholder="Search news..." (keydown.enter)="onNewsSearch()" />
+        <button (click)="onNewsSearch()">Search</button>
+    </div>
+
+    <div *ngFor="let story of newsArticles">
+        <h3>{{ story.title }}</h3>
+        <a *ngIf="story.url" [href]="story.url" target="_blank">Read More</a>
+        <span *ngIf="!story.url">(No link available)</span>
+    </div>
+    <div *ngIf="newsArticles.length === 0">
+        <span>No Records Found!</span>
+    </div>
+    <app-paginator [totalItems]="totalRecords" [itemsPerPage]="itemsPerPage" [currentPage]="currentPage"
+        (pageChange)="onPageChange($event)" (pageSizeChange)="onPageSizeChange($event)"></app-paginator>
+</div>

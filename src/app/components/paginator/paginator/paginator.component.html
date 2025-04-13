@@ -1,0 +1,19 @@
+<div class="paginator">
+    <!-- Page Size Dropdown -->
+    <label for="page-size">Page Size:</label>
+    <select id="page-size" [value]="itemsPerPage" (change)="onPageSizeChange($event)">
+        <option *ngFor="let size of pageSizeOptions" [value]="size">{{ size }}</option>
+    </select>
+
+    <!-- Pagination Navigation -->
+    <button [disabled]="currentPage === 1" (click)="onPageChange(currentPage - 1)">Previous</button>
+    <span *ngFor="let page of displayedPages" (click)="onPageChange(page)" [class.active]="currentPage === page">
+        {{ page }}
+    </span>
+    <button [disabled]="isNextDisabled" (click)="onPageChange(currentPage + 1)">Next</button>
+
+    <!-- Page Info -->
+    <p>Showing page
+        {{ currentPage }} of {{totalPages}} Pages ({{ totalItems }} Records)
+    </p>
+</div>
