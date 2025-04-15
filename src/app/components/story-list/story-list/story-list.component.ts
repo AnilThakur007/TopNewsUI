@@ -44,8 +44,6 @@ export class StoryListComponent {
   }
 
   private updatePaginatedData(): void {
-    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
-    const endIndex = startIndex + this.itemsPerPage;
     this.getTopNewsStories(this.currentPage,this.itemsPerPage,this.searchTerm);
   }
 
